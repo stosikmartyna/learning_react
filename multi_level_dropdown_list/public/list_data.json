@@ -1,0 +1,60 @@
+{
+    "companyData": {
+        "name": "Nagłówek drzewa wielowierszowy",
+        "subdivisions": [
+            {
+                "name": "Pododdział 1",
+                "teams": [
+                    {
+                        "name": "Zespół 1 HR"
+                    },
+                    {
+                        "name": "Zespół 2 Marketing"
+                    }, 
+                    {
+                        "name": "Zespół 3 Analitycy",
+                        "subdivisions": [
+                            "Podzespół 3.1 Kalendarz",
+                            "Podzespół 3.2 Kokpit",
+                            "Podzespół 3.3 Widok",
+                            "Podzespół 3.4 Różności",
+                            "Podzespół 3.5 Szukaj"
+                        ]
+                    },
+                    {
+                        "name": "Zespół 4 Programiści",
+                        "subdivisions": [
+                            "Podzespół 4.1 Front-end",
+                            "Podzespół 4.2 Middle front-end",
+                            "Podzespół 4.3 Middle-end",
+                            "Podzespół 4.4 Middle back-end",
+                            "Podzespół 4.5 Back-end"
+                        ]
+                    }    
+                ]
+            },
+            {
+                "name": "Pododdział 2",
+                "teams": [
+                    {
+                        "name": "Zespół A"
+                    }
+                ]
+            },
+            {
+                "name": "Pododdział 3",
+                "teams": [
+                    {
+                        "name": "Zespół B"
+                    },
+                    {
+                        "name": "Zespół C"
+                    }
+                ]    
+            },        
+            {
+                "name": "Niezrzeszeni"
+            }       
+        ]
+    }
+}

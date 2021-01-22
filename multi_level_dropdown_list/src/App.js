@@ -1,7 +1,4 @@
 import React from 'react';
+import { ListView } from './components/ListView/ListView';
 
-export const App = () => {
-  return (
-    <h1>Multi level dropdown list</h1>
-  );
-}
+export const App = () => <ListView />
