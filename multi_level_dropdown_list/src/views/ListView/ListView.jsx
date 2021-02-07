@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TreeView from '@material-ui/lab/TreeView';
-import { MinusSquare, PlusSquare } from '../icons';
-import { StyledTreeItem } from '../StyledTreeItem/StyledTreeItem';
+import { MinusSquare, PlusSquare } from '../../components/icons';
+import { StyledTreeItem } from '../../components/StyledTreeItem/StyledTreeItem';
 
 export const ListView = () => {
   const [responseData, setResponseData] = useState(undefined);
