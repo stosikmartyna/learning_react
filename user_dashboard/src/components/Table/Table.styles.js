@@ -1,9 +1,5 @@
 import { css } from 'emotion';
 
-export const header = css({
-    marginLeft: '1rem',
-})
-
 export const container = css({
     border: '1px solid lightgrey',
     borderRadius: '6px',
