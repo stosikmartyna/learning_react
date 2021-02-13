@@ -24,6 +24,11 @@ export const Table = ({ users, setUsers }) => {
     }, [getUserData]);
 
 
+    const removeUser = (userToRemove) => {
+        const filteredUsers = users.filter(user => user !== userToRemove)
+        setUsers(filteredUsers)
+    }
+
     return (
         <div className={container}>
             <div className={userList}>
@@ -52,7 +57,7 @@ export const Table = ({ users, setUsers }) => {
                                 <td>{user.email}</td>
                                 <td>{user.address?.city || ''}</td>  
                                 <td><button className={editButton}>edit</button></td>
-                                <td><button className={deleteButton}>delete</button></td>
+                                <td><button onClick={() => removeUser(user)} className={deleteButton}>delete</button></td>
                             </tr>
                         )
                     })}
