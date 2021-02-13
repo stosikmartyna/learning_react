@@ -14,9 +14,8 @@ export const containerTitle = css({
 })
 
 export const inputsContainer = css({
-    alignItems: 'center',
+    alignItems: 'end',
     display: 'flex',
-    justifyContent: 'space-between',
     margin: '0 auto',
     width: '50%'
 })
@@ -33,14 +32,20 @@ export const labels = css({
 export const inputs = css({
     display: 'flex',
     flexDirection: 'column',
+})
 
-    '& input': {
-        border: '1px solid lightgrey',
-        borderRadius: '4px',
-        marginBottom: '1rem',
-        outline: 'none',
-        width: '30rem'
-    }
+export const input = (isFormSubmitted) => css({
+    border: isFormSubmitted ? '1px solid red' : '1px solid lightgrey',
+    borderRadius: '4px',
+    marginBottom: isFormSubmitted ? '.3rem' : '1rem',
+    outline: 'none',
+    width: '25rem'
+})
+
+export const error = css({
+    color: 'red',
+    fontSize: '.7rem',
+    margin: '0 0 .3rem',
 })
 
 export const buttonContainer = css({
