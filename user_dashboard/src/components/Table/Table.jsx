@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { container, userList, table, editButton, deleteButton } from './Table.styles';
 
 export const Table = () => {
     const [userData, setUserData] = useState(undefined);
+    const history = useHistory();
+
+    const redirectToForm = () => {
+        history.push('/form')
+    }
 
     const getUserData = async() => {
         try {
@@ -23,7 +29,7 @@ export const Table = () => {
         <div className={container}>
             <div className={userList}>
                 <p>User list</p>
-                <button>Add new</button>
+                <button onClick={redirectToForm}>Add new</button>
             </div>
             <table className={table}>
                 <thead>
