@@ -1,7 +1,8 @@
 import React from 'react';
+import { Table } from './components/Table/Table';
 
 export const App = () => {
   return (
-    <h1>Dashboard</h1>
+    <Table />
   );
 }
