@@ -1,13 +1,13 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import { container, containerTitle, inputsContainer, labels, inputs, input, buttonContainer, cancelButton, submitButton, error } from './Form.styles';
 
-export const Form = () => {
+export const Form = ({ users, setUsers }) => {
     const [inputsValues, setInputsValues] = useState({
         name: '',
         email: '',
     })
-    const [users, setUsers] = useState([]);
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
     const history = useHistory();
@@ -16,29 +16,27 @@ export const Form = () => {
         history.push('/')
     }
 
-    const handleInputsChange = (event) => {
-        setInputsValues({...inputsValues, [event.target.id]: event.target.value});
+    const postUserData = async() => {
+        try {
+            // This is API call to simulate http post request to database
+            const response = await axios.post('https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data', inputsValues);
+            alert('Sent correctly');
+            setUsers([...users, response.data]);
+        } catch (err) {
+            console.warn(err);
+        }
     }
 
-    const clearForm = () => {
-        setInputsValues({
-            name: '',
-            email: ''
-        });
-        setIsFormSubmitted(false);
+    const handleInputsChange = (event) => {
+        setInputsValues({...inputsValues, [event.target.id]: event.target.value});
     }
 
     const handleSubmit = () => {
         const isFormValid = inputsValues.name.trim() !== ''
                 && inputsValues.email.trim() !== ''
 
-        const submitForm = () => {
-            setUsers([...users, inputsValues])
-            return true
-        }
-
         setIsFormSubmitted(true);
-        isFormValid && submitForm() && clearForm()
+        isFormValid && postUserData() && redirectToTable();
     }
 
     return (

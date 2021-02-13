@@ -1,28 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { container, userList, table, editButton, deleteButton } from './Table.styles';
 
-export const Table = () => {
-    const [userData, setUserData] = useState(undefined);
+export const Table = ({ users, setUsers }) => {
     const history = useHistory();
 
     const redirectToForm = () => {
         history.push('/form')
     }
 
-    const getUserData = async() => {
+    const getUserData = useCallback(async() => {
         try {
             const response = await axios.get('https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data');
-            setUserData(response.data)
+            setUsers(response.data)
         } catch (err) {
             console.warn(err);
         }
-    }
+    }, [setUsers])
     
     useEffect(() => {
       getUserData()
-    }, []);
+    }, [getUserData]);
 
 
     return (
@@ -44,20 +43,20 @@ export const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {userData?.map(user => {
+                    {users?.map(user => {
                         return (
                             <tr key={user.id}>
                                 <td>{user.id}</td>  
                                 <td>{user.name}</td>
-                                <td>{user.username}</td>  
+                                <td>{user.username || ''}</td>  
                                 <td>{user.email}</td>
-                                <td>{user.address.city}</td>  
+                                <td>{user.address?.city || ''}</td>  
                                 <td><button className={editButton}>edit</button></td>
                                 <td><button className={deleteButton}>delete</button></td>
                             </tr>
                         )
                     })}
-                </tbody>            
+                </tbody>    
             </table>
         </div>
     )
