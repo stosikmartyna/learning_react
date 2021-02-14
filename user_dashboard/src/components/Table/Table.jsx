@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { container, userList, table, editButton, deleteButton } from './Table.styles';
+import { container, userList, table, editButton, deleteButton, infobox } from './Table.styles';
 import { BASE_PATH } from '../helpers';
 
 export const Table = ({ users, setUsers }) => {
@@ -28,7 +28,6 @@ export const Table = ({ users, setUsers }) => {
       getUserData()
     }, [getUserData]);
 
-
     const removeUser = async(userToRemove) => {
         const filteredUsers = users.filter(user => user !== userToRemove)
         // Simulation of API call to remove user from database
@@ -39,6 +38,8 @@ export const Table = ({ users, setUsers }) => {
         }
         setUsers(filteredUsers);
     }
+
+    const isDataEmpty = users?.length === 0;
 
     return (
         <div className={container}>
@@ -74,6 +75,7 @@ export const Table = ({ users, setUsers }) => {
                     })}
                 </tbody>    
             </table>
+            {isDataEmpty && <div className={infobox}>No data has been found</div>}
         </div>
     )
 }

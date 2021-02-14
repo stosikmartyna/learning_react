@@ -5,14 +5,14 @@ export const container = css({
     borderRadius: '6px',
     boxShadow: '0 0 10px lightgrey',
     margin: '0 auto',
-    width: '700px'
-})
+    width: '700px',
 
-export const containerTitle = css({
-    borderBottom: '1px solid lightgrey',
-    fontWeight: 'bold',
-    margin: '0 auto 2rem',
-    padding: '1.5rem 1rem',
+    '& p': {
+        borderBottom: '1px solid lightgrey',
+        fontWeight: 'bold',
+        margin: '0 auto 2rem',
+        padding: '1.5rem 1rem',
+    }
 })
 
 export const inputsContainer = css({

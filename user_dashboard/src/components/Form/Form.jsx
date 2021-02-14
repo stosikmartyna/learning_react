@@ -1,13 +1,13 @@
 import React from 'react';
 import { useForm } from '../../hooks/useForm';
-import { container, containerTitle, inputsContainer, labels, inputs, input, buttonContainer, cancelButton, submitButton, error } from './Form.styles';
+import { container, inputsContainer, labels, input, buttonContainer, cancelButton, submitButton, error } from './Form.styles';
 
 export const Form = ({ users, setUsers }) => {
     const {handleInputsChange, handleSubmit, isFormSubmitted, inputsValues, redirectToTable} = useForm(users, setUsers);
 
     return (
         <form className={container} onSubmit={handleSubmit}>
-            <p className={containerTitle}>Form</p>
+            <p>Form</p>
             <div className={inputsContainer}>
                 <div className={labels}>
                     <label htmlFor={'name'}>Name</label>

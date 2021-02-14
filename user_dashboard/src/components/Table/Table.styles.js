@@ -82,3 +82,8 @@ export const deleteButton = css({
         backgroundColor: '#ce4442',
     }
 })
+
+export const infobox = css({
+    margin: '1rem auto',
+    textAlign: 'center',
+})
