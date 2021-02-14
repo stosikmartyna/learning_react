@@ -3,7 +3,9 @@ import { css } from 'emotion';
 export const container = css({
     border: '1px solid lightgrey',
     borderRadius: '6px',
-    margin: 'auto 1rem 2rem 1rem',
+    boxShadow: '0 0 10px lightgrey',
+    margin: '0 auto',
+    width: '700px'
 })
 
 export const containerTitle = css({
@@ -14,24 +16,19 @@ export const containerTitle = css({
 })
 
 export const inputsContainer = css({
-    alignItems: 'end',
     display: 'flex',
-    margin: '0 auto',
-    width: '50%'
+    padding: '0 3rem',
 })
+
 export const labels = css({
     display: 'flex',
     flexDirection: 'column',
     marginRight: '3rem',
     
     '& label': {
-        marginBottom: '1rem'
+        marginBottom: '1.3rem',
+        padding: '.5rem 1rem',
     }
-})
-
-export const inputs = css({
-    display: 'flex',
-    flexDirection: 'column',
 })
 
 export const input = (isFormSubmitted) => css({
@@ -39,7 +36,8 @@ export const input = (isFormSubmitted) => css({
     borderRadius: '4px',
     marginBottom: isFormSubmitted ? '.3rem' : '1rem',
     outline: 'none',
-    width: '25rem'
+    padding: '.5rem 1rem',
+    width: '440px',
 })
 
 export const error = css({
@@ -51,8 +49,7 @@ export const error = css({
 export const buttonContainer = css({
     display: 'flex',
     justifyContent: 'flex-end',
-    margin: '0 3rem 1rem 0',
-    width: 'content'
+    margin: '0 3.4rem 1rem auto',
 })
 
 export const cancelButton = css({

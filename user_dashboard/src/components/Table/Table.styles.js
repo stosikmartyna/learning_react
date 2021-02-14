@@ -3,6 +3,7 @@ import { css } from 'emotion';
 export const container = css({
     border: '1px solid lightgrey',
     borderRadius: '6px',
+    boxShadow: '0 0 10px lightgrey',
     margin: 'auto 1rem 2rem 1rem',
 })
 

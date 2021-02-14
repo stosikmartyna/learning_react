@@ -54,13 +54,15 @@ export const useForm = (users, setUsers) => {
         }
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        
         const isFormValid = inputsValues.name.trim() !== ''
                 && inputsValues.email.trim() !== ''
 
         setIsFormSubmitted(true);
-        isFormValid && isEditForm ? updateUserData() : postUserData();
-        redirectToTable();
+        const submit = () => isEditForm ? updateUserData() : postUserData()
+        isFormValid && submit() && redirectToTable();;
     }
 
     const redirectToTable = () => {
@@ -68,7 +70,7 @@ export const useForm = (users, setUsers) => {
     }
 
     useEffect(() => {
-        id && getUserData();
+        isEditForm && getUserData();
     }, []);
 
     return {
