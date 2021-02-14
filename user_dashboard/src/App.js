@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Form } from './components/NewUserForm/Form';
+import { Form } from './components/Form/Form';
 import { Table } from './components/Table/Table';
 import { header } from './App.styles';
 
