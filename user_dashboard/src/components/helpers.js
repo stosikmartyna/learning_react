@@ -1,0 +1,1 @@
+export const BASE_PATH = 'https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data';

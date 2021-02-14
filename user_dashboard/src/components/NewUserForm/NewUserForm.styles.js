@@ -49,8 +49,10 @@ export const error = css({
 })
 
 export const buttonContainer = css({
-    margin: '0 1rem 1rem 0',
-    width: 'max-content'
+    display: 'flex',
+    justifyContent: 'flex-end',
+    margin: '0 3rem 1rem 0',
+    width: 'content'
 })
 
 export const cancelButton = css({

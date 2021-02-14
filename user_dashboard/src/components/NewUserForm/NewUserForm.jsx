@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import { container, containerTitle, inputsContainer, labels, inputs, input, buttonContainer, cancelButton, submitButton, error } from './Form.styles';
+import { BASE_PATH } from '../helpers';
+import { container, containerTitle, inputsContainer, labels, inputs, input, buttonContainer, cancelButton, submitButton, error } from './NewUserForm.styles';
 
-export const Form = ({ users, setUsers }) => {
+export const NewUserForm = ({ users, setUsers }) => {
     const [inputsValues, setInputsValues] = useState({
         name: '',
         email: '',
@@ -18,8 +19,9 @@ export const Form = ({ users, setUsers }) => {
 
     const postUserData = async() => {
         try {
+            const params = {...inputsValues, id: users.length + 1}
             // This is API call to simulate http post request to database
-            const response = await axios.post('https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data', inputsValues);
+            const response = await axios.post(BASE_PATH, params);
             alert('Sent correctly');
             setUsers([...users, response.data]);
         } catch (err) {

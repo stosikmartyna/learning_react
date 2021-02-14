@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Form } from './components/Form/Form';
+import { NewUserForm } from './components/NewUserForm/NewUserForm';
+import { EditUserForm } from './components/EditUserForm/EditUserForm';
 import { Table } from './components/Table/Table';
 import { header } from './App.styles';
 
@@ -14,8 +15,11 @@ export const App = () => {
         <Route exact path={'/'}>
           <Table users={users} setUsers={setUsers} />
         </Route>
-        <Route path={'/form'}>
-          <Form users={users} setUsers={setUsers} />
+        <Route exact path={'/create'}>
+          <NewUserForm users={users} setUsers={setUsers} />
+        </Route>
+        <Route path={'/edit/:id'}>
+          <EditUserForm />
         </Route>
       </Switch>
     </>
