@@ -6,13 +6,13 @@ export const container = css({
     boxShadow: '0 0 10px lightgrey',
     margin: '0 auto',
     width: '700px',
+})
 
-    '& p': {
-        borderBottom: '1px solid lightgrey',
-        fontWeight: 'bold',
-        margin: '0 auto 2rem',
-        padding: '1.5rem 1rem',
-    }
+export const formTitle = css({
+    borderBottom: '1px solid lightgrey',
+    fontWeight: 'bold',
+    margin: '0 auto 2rem',
+    padding: '1.5rem 1rem',
 })
 
 export const inputsContainer = css({
