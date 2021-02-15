@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { container, input } from './MainView.styles';
 
@@ -10,29 +10,33 @@ const API = {
 export const MainView = () => {
     const [weather, setWeather] = useState(undefined);
     const [city, setCity] = useState('');
-  
-    const getWeather = async() => {
-      try {
-          const response = await axios.get(`${API.base}weather?q=Warsaw&appid=${API.key}`);
-          setWeather(response.data)
-      } catch (err) {
-          console.warn(err);
-      }
-  }
-  
-    useEffect(() => {
-      getWeather()
-    }, []);
-  
+
     const handleInputChange = (event) => {
       setCity(event.target.value);
     }  
     
+    const searchCity = async(event) => {
+        if(event.key === 'Enter') {
+            try {
+                const response = await axios.get(`${API.base}weather?q=${city}&appid=${API.key}&units=metric`);
+                setWeather(response.data)
+            } catch (err) {
+                console.warn(err);
+            }
+        }
+    }
+
     return (
         <div className={container}>
             <h1>Weather App</h1> 
-            <input className={input} placeholder={'City'} value={city} onChange={handleInputChange} />
-            <p>{weather?.name}, {weather?.sys.country}</p>
+            <input className={input} placeholder={'City'} value={city} onChange={handleInputChange} onKeyPress={searchCity} />
+            {weather && (
+                <>
+                    <p>{weather.name}, {weather.sys.country}</p>
+                    <p>{Math.round(weather.main.temp)}°C</p>
+                    <p>{weather.weather[0].main}</p>
+                </>
+            )}
         </div>
     )
 }

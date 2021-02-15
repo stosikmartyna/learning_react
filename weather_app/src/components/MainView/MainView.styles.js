@@ -4,6 +4,7 @@ export const container = css ({
     border: ' 1px solid grey',
     borderRadius: '6px',
     margin: '0 auto',
+    textAlign: 'center',
     width: '50vw',
 })
 
