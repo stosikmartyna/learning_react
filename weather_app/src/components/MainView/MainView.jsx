@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { container, input, date, temperature, temperatureMinMax } from './MainView.styles';
+import { container, input, date, temperature, temperatureMinMax, iconContainer } from './MainView.styles';
 
 const API = {
     key: 'a0cfb4380cff4455bda83f46832638b2',
@@ -61,7 +61,10 @@ export const MainView = () => {
                             <p>{Math.round(weather.main.temp_max)}°C</p>
                         </div>
                     </div>
-                    <p>{weather.weather[0].main}</p>
+                    <div className={iconContainer}>
+                        <p>{weather.weather[0].main}</p>
+                        <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}/>
+                    </div>
                 </>
             )}
         </div>

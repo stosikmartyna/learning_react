@@ -54,3 +54,18 @@ export const temperatureMinMax = css({
             paddingTop: '.5rem',
         }
 })
+
+export const iconContainer = css({
+    marginTop: '1.5rem',
+
+    '& p': {
+        color: '#63798e',
+        fontSize: '1.5rem',
+        fontWeight: 'bold',
+        margin: 0,
+    },
+
+    '& img': {
+        width: '70px',
+    }
+})
