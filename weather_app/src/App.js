@@ -1,8 +1,11 @@
 import React from 'react';
 import { MainView } from './components/MainView/MainView';
+import { container } from './App.styles';
 
 export const App = () => {
   return (
-    <MainView />
+    <div className={container}>
+      <MainView />
+    </div>
   );
 }
