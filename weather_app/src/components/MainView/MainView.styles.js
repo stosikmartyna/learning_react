@@ -1,11 +1,21 @@
 import { css } from 'emotion';
 
-export const container = css ({
+export const main = css({
+    background: 'url("img/background.jpg")',
+    backgroundSize: 'cover',
+    display: 'flex',
+    height: '100vh',
+    minWidth: '350px',
+    width: '100%',
+});
+
+export const container = css({
     backgroundColor: 'rgba(255, 255, 255, 0.7)',
     borderRadius: '12px',
     boxShadow: '0 0 7px grey',
-    height: '70%',
-    padding: '1rem 0',
+    margin: 'auto',
+    minWidth: '350px',
+    padding: '4rem 0',
     textAlign: 'center',
     width: '40%',
 
@@ -13,14 +23,14 @@ export const container = css ({
         color: '#63798e',
         fontSize: '2rem',
         fontWeight: 'lighter',
-        margin: '1rem 0 .5rem',
+        margin: '.5rem 0',
     }
 })
 
-export const input = css ({
-    backgroundColor: 'transparent',
-    border: 'none',
-    borderBottom: '2px solid #113a63',
+export const input = css({
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    border: '1px solid #63798e',
+    borderRadius: '6px',
     color: '#113a63',
     fontSize: '1rem',
     margin: '1rem auto',
@@ -32,37 +42,42 @@ export const date = css({
     color: '#63798e'
 })
 
-export const temperature = css({
+export const location = css({
+    color: '#113a63',
+})
+
+export const temperatureBox = css({
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    margin: '1.5rem 0',
+})
+
+export const temperatureMain = css({
     color: '#113a63',
     fontWeight: 'bold',
     fontSize: '4rem',
-    margin: '0'
+    margin: '0 3rem'
 })
 
 export const temperatureMinMax = css({
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '0 auto',
-    paddingTop: '1rem',
-    width: '20%',
-
-        '& p': {
-            color: '#113a63',
-            fontSize: '1.5rem',
-            fontWeight: 'bold',
-            margin: 0,
-            paddingTop: '.5rem',
-        }
+    color: '#113a63',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    margin: 0,
+    paddingTop: '.5rem',
 })
 
 export const iconContainer = css({
-    marginTop: '1.5rem',
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
 
     '& p': {
         color: '#63798e',
         fontSize: '1.5rem',
         fontWeight: 'bold',
-        margin: 0,
+        margin: '0 1rem',
     },
 
     '& img': {
