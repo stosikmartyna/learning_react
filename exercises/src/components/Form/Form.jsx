@@ -45,7 +45,7 @@ export const Form = () => {
 
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <input id={'username'} placeholder={'Name'} value={inputsValues.username} onChange={handleInputsChange} />
                     {validateForm(inputsValues.username) && <p>Name is required</p>}
@@ -54,7 +54,7 @@ export const Form = () => {
                     <input id={'password'} placeholder={'Password'} value={inputsValues.password} onChange={handleInputsChange} type={'password'} />
                     {validateForm(inputsValues.password) && <p>Password is required</p>}
                 </div>
-                <button onClick={handleSubmit}>Submit</button>
+                <button type={'submit'}>Submit</button>
             </form>
             {usersData.map((user, i) => {
                 return (
